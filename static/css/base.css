@@ -65,3 +65,37 @@ nav a:hover {
 	margin: 40px auto;
 	padding: 0 25px;
 }
+
+/* ==========================================
+   Mobil qurilmalar uchun (Responsive Design)
+   ========================================== */
+@media (max-width: 600px) {
+	.header-container {
+		flex-direction: column; /* Logotip va Navigatsiyani ustma-ust joylashtirish */
+		justify-content: center;
+		text-align: center;
+		padding: 15px;
+		gap: 12px;
+	}
+
+	.logo a {
+		font-size: 22px; /* Mobil ekranda shrift o'lchamini kichiklashtirish */
+	}
+
+	nav {
+		width: 100%;
+		justify-content: center;
+		flex-wrap: wrap; /* Kichik ekranda tugmalar sig'may qolsa keyingi qatorgan o'tishi uchun */
+	}
+
+	nav a {
+		font-size: 14px;
+		padding: 6px 12px;
+		background: #f3f4f6; /* Mobil ekranda ko'rinishini yaxshilash uchun yengil orqafon */
+	}
+
+	.content {
+		margin: 20px auto;
+		padding: 0 15px; /* Mobil ekranda yon chekinishlarni qisqartirish */
+	}
+}
