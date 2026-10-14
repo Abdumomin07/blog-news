@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/post-delete.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+<div class="delete-post">
+
+	<h1>Postni o'chirish</h1>
+
+	<form method="post">
+		{% csrf_token %}
+
+		<p>
+			<span class="post-title">{{ post.title }}</span>
+			postini o'chirmoqchimisiz?
+		</p>
+
+		<input class="delete-btn" type="submit" value="Ha, tasdiqlayman">
+
+		<a href="{{ post.get_absolute_url }}" class="cancel-btn">
+			Bekor qilish
+		</a>
+	</form>
+
+</div>
+
+{% endblock content %}

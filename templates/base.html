@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+	{% block extra_css %}
+	{% endblock extra_css %}
+	<title>Abdumo'mins Blog</title>
+</head>
+
+<body>
+	<header class="site-header">
+		<div class="header-container">
+			<h1 class="logo">
+				<a href="{% url 'home' %}">Abdumo'min's Blog</a>
+			</h1>
+
+			<nav>
+				<a href="{% url 'home' %}">Bosh sahifa</a>
+				<a href="{% url 'post-new' %}">Yangi Post yaratish</a>
+			</nav>
+		</div>
+	</header>
+
+	{% block content %}
+	{% endblock content %}
+
+</body>
+
+</html>

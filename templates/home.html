@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for post in object_list %}
+<section class="post-entry">
+	<h2>
+		<a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a>
+	</h2>
+
+	<p>{{ post.body }}</p>
+</section>
+{% endfor %}
+
+
+<style>
+	.posts {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.post-entry {
+		background: #fff;
+		padding: 25px 30px;
+
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+	}
+
+	/* Sarlavha */
+	.post-entry h2 {
+		margin: 0 0 12px;
+	}
+
+	.post-entry h2 a {
+		color: #1f2937;
+		text-decoration: none;
+
+		font-size: 25px;
+		font-weight: 700;
+	}
+
+	/* Sarlavhaga sichqoncha olib kelganda */
+	.post-entry h2 a:hover {
+		color: #2563eb;
+	}
+
+	/* Matn */
+	.post-entry p {
+		margin: 0;
+
+		color: #6b7280;
+		font-size: 16px;
+		line-height: 1.7;
+	}
+</style>
+
+{% endblock content %}
